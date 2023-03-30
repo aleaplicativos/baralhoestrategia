@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aleaplicativos</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:600" rel="stylesheet">
+    <link href="https://picturelements.github.io/libraries/Turnip/Turnip_green.css" rel="stylesheet" type="text/css">
+    <script src="https://picturelements.github.io/libraries/Turnip/Turnip_v1.js"></script>
+  </head>
+  <body expanded="false">
+    <audio id="flipsound" src="https://picturelements.github.io/games/solitaire/sounds/flip.wav" type="audio/wav"></audio>
+    <audio id="placesound" src="https://picturelements.github.io/games/solitaire/sounds/place.wav" type="audio/wav"></audio>
+    <audio id="collapsesound" src="https://picturelements.github.io/games/solitaire/sounds/collapse.wav" type="audio/wav"></audio>
+    <div id="header">
+      <div id="gameinfo">
+        <div>Time: <span id="time">00:00</span></div>
+        <div id="gamename"></div>
+        <div style="text-align:right">Moves: <span id="movecount">0</span></div>
+      </div>
+      <div id="settingsinfo">
+        <div class="settingsitem selected" onclick="slideSettings(this,0)">Select solitaire</div>
+        <div class="settingsitem" onclick="slideSettings(this,1)">Settings</div>
+        <div class="settingsitem" onclick="slideSettings(this,2)">About</div>
+        <div class="settingsitem hidden">License</div>
+      </div>
+    </div>
+    <div id="main">
+      <div id="gamecontainer"></div>
+      <div id="actionscreen">
+        <div class="actionwrapper">
+          <div id="showcase"></div>
+        </div>
+        <div class="actionwrapper">
+          <div id="inputarea"></div>
+        </div>
+        <div class="actionwrapper" style="background:rgba(0,0,0,0.5)">
+          <div class="textpage">
+            <h1>PESolitaire v1.0</h1>
+                          PESOLITAIRE.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="buttonwrapper">
+        <div id="actionbutton" class="btn" onclick="toggleAction()" data-title="Select solitaire">
+          <svg viewBox="0 0 40 40">
+            <path d="M10 14 l20 0"></path>
+            <path d="M10 19 l20 0"></path>
+            <path d="M10 24 l20 0"></path>
+          </svg>
+        </div>
+        <div id="restartbutton" class="btn" onclick="setupGame(currentGame)" data-title="New game">
+          <svg viewBox="0 0 40 40">
+            <path d="M21 13 A8 8 0 1 0 27 18"></path>
+            <path d="M14 9.8 l6 3 l-3.4 6"></path>
+          </svg>
+        </div>
+        <div id="hintbutton" fade="false" class="btn" onclick="markHints()" data-title="Get hint">
+          <svg viewBox="0 0 40 40">
+            <path d="M15 24 a8 8 0 1 1 10 0 l-5 0 l2 -5 l-4 0 l2 5 z"></path>
+            <path d="M15 27 l10 0"></path>
+            <path d="M15 30 l10 0"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div id="svgbuffers" style="display:none">
+      <div id="reversebuffer">
+        <svg width="70" height="100" viewBox="0 0 70 100">
+          <rect width="60" height="90" x="5" y="5" fill="#059"></rect>
+          <circle r="15" cx="5" cy="5"></circle>
+          <circle r="15" cx="65" cy="5"></circle>
+          <circle r="15" cx="5" cy="95"></circle>
+          <circle r="15" cx="65" cy="95"></circle>
+        </svg>
+      </div>
+      <svg id="powerbuffer_11">
+        <path d="M20 57 l30 0 l10 -20 l-25 5 l-25 -5"></path>
+        <rect x="20" y="59" width="14" height="5"></rect>
+        <rect x="36" y="59" width="14" height="5"></rect>
+      </svg>
+      <svg id="powerbuffer_12">
+        <path d="M20 55 l30 0 l10 -20 l-18 10 l-7 -10 l-7 10 l-18 -10"></path>
+        <rect x="20" y="60" width="30" height="5"></rect>
+      </svg>
+      <svg id="powerbuffer_13">
+        <path d="M20 53 l30 0 l10 -20 l-18 10 l-7 -10 l-7 10 l-18 -10"></path>
+        <rect x="20" y="55" width="30" height="5"></rect>
+        <rect x="20" y="62" width="30" height="5"></rect>
+      </svg>
+      <div id="deckbuffer">
+        <svg viewBox="5 5 30 30">
+          <path class="redealable" d="M21 13 A8 8 0 1 0 27 18"></path>
+          <path class="redealable" d="M15 9.5 l6 3 l-3.4 6"></path>
+          <path class="noredealable" d="M11 11 l18 18"></path>
+          <path class="noredealable" d="M11 29 l18 -18"></path>
+        </svg>
+      </div>
+    </div>
+    <style id="customstyle"></style>
+  </body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
